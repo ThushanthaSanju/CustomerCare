@@ -6,6 +6,8 @@ import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import FirstStep from "../components/components/FirstStep";
+import SecondStep from "../components/components/SecondStep";
+import ThirdStep from "../components/components/ThirdStep";
 const steps = [
   "General Information",
   "Address Information",
@@ -23,10 +25,10 @@ export default function HorizontalLinearStepper() {
     switch (step) {
       case 0:
         return <FirstStep />;
-      //   case 1:
-      //     return <PaymentForm formField={formField} />;
-      //   case 2:
-      //     return <ReviewOrder />;
+      case 1:
+        return <SecondStep />;
+      case 2:
+        return <ThirdStep />;
       default:
         return <div>Not Found</div>;
     }
@@ -102,7 +104,7 @@ export default function HorizontalLinearStepper() {
         </React.Fragment>
       ) : (
         <React.Fragment>
-          <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography>
+          {/* <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography> */}
           <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
             <Button
               color="inherit"

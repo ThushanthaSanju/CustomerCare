@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
@@ -6,20 +7,13 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
-import { Grid } from "@mui/material";
+import { Grid, InputLabel, MenuItem, Select } from "@mui/material";
 
-const FirstStep = () => {
-  const [value, setValue] = React.useState({
-    first: "",
-    second: "",
-    nic: "",
-    gender: "",
-  });
-  console.log("value", value);
+const ThirdStep = () => {
+  const [value, setValue] = React.useState("female");
 
   const handleChange = (event) => {
-    // setValue(event.target.value);
-    setValue({ gender: event.target.value });
+    setValue(event.target.value);
   };
   return (
     <Grid style={{ width: 800 }} ml={75} mt={10}>
@@ -36,31 +30,30 @@ const FirstStep = () => {
         <Grid item md={6}>
           <TextField
             id="outlined-basic"
-            label="First Name"
+            label="Mobile Number"
             variant="outlined"
             style={{ width: 400 }}
-            onChange={(e) => setValue({ first: e.target.value })}
           />
         </Grid>
         <Grid item md={6}>
           <TextField
             id="outlined-basic"
-            label="Second Name"
+            label="Email"
             variant="outlined"
             style={{ width: 400 }}
-            onChange={(e) => setValue({ second: e.target.value })}
           />
         </Grid>
         <Grid item md={6}>
           <TextField
             id="outlined-basic"
-            label="NIC"
+            label="Remarks"
             variant="outlined"
-            style={{ width: 400 }}
-            onChange={(e) => setValue({ nic: e.target.value })}
+            style={{ width: 800 }}
+            multiline
+            rows={6}
           />
         </Grid>
-        <Grid item md={6}>
+        {/* <Grid item md={6}>
           <FormControl row>
             <FormLabel id="demo-controlled-radio-buttons-group" row>
               Gender
@@ -80,7 +73,7 @@ const FirstStep = () => {
               <FormControlLabel value="male" control={<Radio />} label="Male" />
             </RadioGroup>
           </FormControl>
-        </Grid>
+        </Grid> */}
       </Grid>
       {/* <TextField id="outlined-basic" label="First Name" variant="outlined" />
         <TextField id="outlined-basic" label="Last Name" variant="outlined" />
@@ -107,4 +100,4 @@ const FirstStep = () => {
   );
 };
 
-export default FirstStep;
+export default ThirdStep;
