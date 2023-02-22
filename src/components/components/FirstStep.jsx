@@ -23,7 +23,6 @@ const FirstStep = () => {
   };
   return (
     <Grid style={{ width: 800 }} ml={75} mt={10}>
-      {" "}
       {/* <Box
         component="form"
         sx={{

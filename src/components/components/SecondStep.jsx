@@ -10,10 +10,15 @@ import FormLabel from "@mui/material/FormLabel";
 import { Grid, InputLabel, MenuItem, Select } from "@mui/material";
 
 const SecondStep = () => {
-  const [value, setValue] = React.useState("female");
+  const [value, setValue] = React.useState({
+    first: "",
+    second: "",
+    district: "",
+  });
+  console.log("value", value);
 
   const handleChange = (event) => {
-    setValue(event.target.value);
+    setValue({ first: event.target.value });
   };
   return (
     <Grid style={{ width: 800 }} ml={75} mt={10}>
@@ -33,6 +38,7 @@ const SecondStep = () => {
             label="Address Line One"
             variant="outlined"
             style={{ width: 400 }}
+            onChange={(e) => setValue({ first: e.target.value })}
           />
         </Grid>
         <Grid item md={6}>
@@ -41,6 +47,7 @@ const SecondStep = () => {
             label="Address Line Two"
             variant="outlined"
             style={{ width: 400 }}
+            onChange={(e) => setValue({ second: e.target.value })}
           />
         </Grid>
         <Grid item md={6}>
